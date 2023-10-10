@@ -19,4 +19,21 @@ $sudo su$: Requests a password from the previously assigned user. Escalate to ro
 
 * $grep$ helps apply filters supported by: |. So, if we want to filter by the id of a specific group we can do $cat$ /etc/group | grep "group_name".
 
+* $command$ -v [command] is used in case which cannot be executed in some command.
+
+* $pwd$: current path
+
+* $ls$: Lists the contents of a file. With the -l parameter you can list in detail the current resources of the current working directory. The path can be specified: ls [path].
+
+* $cd$(change directory): We migrate directories. Example: Go to the downloads directory -> $cd$ Download. To return to the previous directory, use a ".." -> $cd$ ..
+To specify a specific path -> $cd$ /home/user/
+To go to the root of the system it is done using $cd$ /
+
+* $HOME: Here it tells you the user's personal directory.
+
+* /etc/passwd: Here the users are shown at the system level, with their user identifiers, group identifiers, personal directory and finally the type of shell used.
+
+* $SHELL: The type of shell used.
+
+* /etc/shell: Shell types.
 
