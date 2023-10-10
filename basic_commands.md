@@ -1,4 +1,22 @@
-id: you can see which groups they belong to. Each user normally is assigned a group with the same name.
+* We are a user at the system level -> We can check which user we are with $whoami$
 
-Being in the sudo group allows privilege to be escalated from the current user to the root user.
-sudo su: 
+* $id:$ you can see which groups they belong to. Each user normally is assigned a group with the same name. When pentesting is carried out, seeing at each moment which group we are in is interesting because there are groups that may present a potential risk in the face of an escalation of privileges.
+
+* Being in the sudo group allows privilege to be escalated from the current user to the root user.
+$sudo su$: Requests a password from the previously assigned user. Escalate to root user. The root user is the one with the greatest privileges at the system level.
+
+$exit$: Exit the current session as root and return to the non-privileged user.
+
+We can use the word $sudo$ followed by the command we want to use without needing to be the root user.
+
+We can see all the groups within $id$ within a system path found in /etc/group
+
+$cat$ helps us list the content of the following parameter: $cat$ /etc/group shows us the content of /etc/group, we see all the existing groups and the group identifier at the end.
+
+When we execute a command, for example, $whoami$, it is the execution of the command $whoami$ (binary) using a relative path, that is, it is not necessary to specify its absolute path. Each binary should have an absolute path and can be obtained using $which$ [command]. The absolute path of $whoami$ is /usr/bin/whoami, therefore, the execution of said command can also be done by writing said absolute path.
+
+There is an environment variable that helps us manage this, so that it is not necessary to write the entire path for the binaries, this variable is PATH: It contains several paths separated by colons, which is an order of priority existing throughout the which when we execute the [command] it begins to search for it in each of the routes located in PATH.
+
+$grep$ ayuda a aplicar filtros apoyado de: |. Entonces, si queremos filtrar por id de un grupo en especifico podemos realizar $cat$ /etc/group | grep "group_name".
+
+
